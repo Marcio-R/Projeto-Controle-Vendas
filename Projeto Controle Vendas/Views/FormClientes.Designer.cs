@@ -30,8 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbClientes = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabClientes = new System.Windows.Forms.TabControl();
+            this.tabPageCadastro = new System.Windows.Forms.TabPage();
             this.txtUf = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
@@ -60,7 +60,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPageConsulta = new System.Windows.Forms.TabPage();
             this.tabelaCliente = new System.Windows.Forms.DataGridView();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
@@ -70,9 +70,9 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.tbClientes.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tabClientes.SuspendLayout();
+            this.tabPageCadastro.SuspendLayout();
+            this.tabPageConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,57 +97,55 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro de Clientes";
             // 
-            // tbClientes
+            // tabClientes
             // 
-            this.tbClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbClientes.Controls.Add(this.tabPage1);
-            this.tbClientes.Controls.Add(this.tabPage2);
-            this.tbClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbClientes.Location = new System.Drawing.Point(0, 74);
-            this.tbClientes.Name = "tbClientes";
-            this.tbClientes.SelectedIndex = 0;
-            this.tbClientes.Size = new System.Drawing.Size(953, 364);
-            this.tbClientes.TabIndex = 1;
+            this.tabClientes.Controls.Add(this.tabPageCadastro);
+            this.tabClientes.Controls.Add(this.tabPageConsulta);
+            this.tabClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabClientes.Location = new System.Drawing.Point(0, 77);
+            this.tabClientes.Name = "tabClientes";
+            this.tabClientes.SelectedIndex = 0;
+            this.tabClientes.Size = new System.Drawing.Size(958, 455);
+            this.tabClientes.TabIndex = 1;
             // 
-            // tabPage1
+            // tabPageCadastro
             // 
-            this.tabPage1.Controls.Add(this.txtUf);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.txtBairro);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.txtCidade);
-            this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Controls.Add(this.txtNumero);
-            this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Controls.Add(this.txtComplemento);
-            this.tabPage1.Controls.Add(this.label16);
-            this.tabPage1.Controls.Add(this.txtEndereco);
-            this.tabPage1.Controls.Add(this.label17);
-            this.tabPage1.Controls.Add(this.txtCep);
-            this.tabPage1.Controls.Add(this.label18);
-            this.tabPage1.Controls.Add(this.txtCelular);
-            this.tabPage1.Controls.Add(this.label19);
-            this.tabPage1.Controls.Add(this.txtTelefone);
-            this.tabPage1.Controls.Add(this.label20);
-            this.tabPage1.Controls.Add(this.txtCpf);
-            this.tabPage1.Controls.Add(this.label21);
-            this.tabPage1.Controls.Add(this.txtRg);
-            this.tabPage1.Controls.Add(this.label22);
-            this.tabPage1.Controls.Add(this.txtEmail);
-            this.tabPage1.Controls.Add(this.label23);
-            this.tabPage1.Controls.Add(this.txtNome);
-            this.tabPage1.Controls.Add(this.label24);
-            this.tabPage1.Controls.Add(this.txtCodigo);
-            this.tabPage1.Controls.Add(this.label25);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(945, 331);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Dados Pessoais";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPageCadastro.Controls.Add(this.txtUf);
+            this.tabPageCadastro.Controls.Add(this.label3);
+            this.tabPageCadastro.Controls.Add(this.txtBairro);
+            this.tabPageCadastro.Controls.Add(this.label2);
+            this.tabPageCadastro.Controls.Add(this.txtCidade);
+            this.tabPageCadastro.Controls.Add(this.label14);
+            this.tabPageCadastro.Controls.Add(this.txtNumero);
+            this.tabPageCadastro.Controls.Add(this.label15);
+            this.tabPageCadastro.Controls.Add(this.txtComplemento);
+            this.tabPageCadastro.Controls.Add(this.label16);
+            this.tabPageCadastro.Controls.Add(this.txtEndereco);
+            this.tabPageCadastro.Controls.Add(this.label17);
+            this.tabPageCadastro.Controls.Add(this.txtCep);
+            this.tabPageCadastro.Controls.Add(this.label18);
+            this.tabPageCadastro.Controls.Add(this.txtCelular);
+            this.tabPageCadastro.Controls.Add(this.label19);
+            this.tabPageCadastro.Controls.Add(this.txtTelefone);
+            this.tabPageCadastro.Controls.Add(this.label20);
+            this.tabPageCadastro.Controls.Add(this.txtCpf);
+            this.tabPageCadastro.Controls.Add(this.label21);
+            this.tabPageCadastro.Controls.Add(this.txtRg);
+            this.tabPageCadastro.Controls.Add(this.label22);
+            this.tabPageCadastro.Controls.Add(this.txtEmail);
+            this.tabPageCadastro.Controls.Add(this.label23);
+            this.tabPageCadastro.Controls.Add(this.txtNome);
+            this.tabPageCadastro.Controls.Add(this.label24);
+            this.tabPageCadastro.Controls.Add(this.txtCodigo);
+            this.tabPageCadastro.Controls.Add(this.label25);
+            this.tabPageCadastro.Location = new System.Drawing.Point(4, 29);
+            this.tabPageCadastro.Name = "tabPageCadastro";
+            this.tabPageCadastro.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCadastro.Size = new System.Drawing.Size(950, 403);
+            this.tabPageCadastro.TabIndex = 0;
+            this.tabPageCadastro.Text = "Dados Pessoais";
+            this.tabPageCadastro.UseVisualStyleBackColor = true;
             // 
             // txtUf
             // 
@@ -435,30 +433,28 @@
             this.label25.TabIndex = 26;
             this.label25.Text = "Codigo:\r\n";
             // 
-            // tabPage2
+            // tabPageConsulta
             // 
-            this.tabPage2.Controls.Add(this.tabelaCliente);
-            this.tabPage2.Controls.Add(this.btnPesquisar);
-            this.tabPage2.Controls.Add(this.txtPesquisa);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(945, 331);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Consulta";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPageConsulta.Controls.Add(this.tabelaCliente);
+            this.tabPageConsulta.Controls.Add(this.btnPesquisar);
+            this.tabPageConsulta.Controls.Add(this.txtPesquisa);
+            this.tabPageConsulta.Controls.Add(this.label4);
+            this.tabPageConsulta.Location = new System.Drawing.Point(4, 29);
+            this.tabPageConsulta.Name = "tabPageConsulta";
+            this.tabPageConsulta.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageConsulta.Size = new System.Drawing.Size(950, 422);
+            this.tabPageConsulta.TabIndex = 1;
+            this.tabPageConsulta.Text = "Consulta";
+            this.tabPageConsulta.UseVisualStyleBackColor = true;
             // 
             // tabelaCliente
             // 
-            this.tabelaCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabelaCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabelaCliente.Location = new System.Drawing.Point(8, 82);
+            this.tabelaCliente.Location = new System.Drawing.Point(0, 82);
             this.tabelaCliente.Name = "tabelaCliente";
-            this.tabelaCliente.Size = new System.Drawing.Size(931, 243);
+            this.tabelaCliente.Size = new System.Drawing.Size(954, 269);
             this.tabelaCliente.TabIndex = 33;
+            this.tabelaCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaCliente_CellClick);
             // 
             // btnPesquisar
             // 
@@ -471,6 +467,7 @@
             this.btnPesquisar.TabIndex = 32;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtPesquisa
             // 
@@ -495,7 +492,7 @@
             this.btnNovo.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNovo.Location = new System.Drawing.Point(218, 455);
+            this.btnNovo.Location = new System.Drawing.Point(218, 475);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(105, 40);
             this.btnNovo.TabIndex = 2;
@@ -507,7 +504,7 @@
             this.btnSalvar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSalvar.Location = new System.Drawing.Point(343, 455);
+            this.btnSalvar.Location = new System.Drawing.Point(343, 475);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(105, 40);
             this.btnSalvar.TabIndex = 3;
@@ -520,35 +517,37 @@
             this.btnExcluir.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnExcluir.Location = new System.Drawing.Point(483, 455);
+            this.btnExcluir.Location = new System.Drawing.Point(483, 475);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(105, 40);
             this.btnExcluir.TabIndex = 4;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditar.Location = new System.Drawing.Point(617, 455);
+            this.btnEditar.Location = new System.Drawing.Point(617, 475);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(105, 40);
             this.btnEditar.TabIndex = 5;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 513);
+            this.ClientSize = new System.Drawing.Size(958, 532);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnNovo);
-            this.Controls.Add(this.tbClientes);
+            this.Controls.Add(this.tabClientes);
             this.Controls.Add(this.panel1);
             this.Name = "FormClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -556,11 +555,11 @@
             this.Load += new System.EventHandler(this.FormClientes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tbClientes.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.tabClientes.ResumeLayout(false);
+            this.tabPageCadastro.ResumeLayout(false);
+            this.tabPageCadastro.PerformLayout();
+            this.tabPageConsulta.ResumeLayout(false);
+            this.tabPageConsulta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaCliente)).EndInit();
             this.ResumeLayout(false);
 
@@ -570,9 +569,9 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl tbClientes;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl tabClientes;
+        private System.Windows.Forms.TabPage tabPageCadastro;
+        private System.Windows.Forms.TabPage tabPageConsulta;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtNumero;
