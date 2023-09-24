@@ -21,7 +21,7 @@ namespace Projeto_Controle_Vendas.Views
         }
         private void FormClientes_Load(object sender, EventArgs e)
         {
-            tabelaCliente.DataSource = dao.ListarClientes(); 
+            tabelaCliente.DataSource = dao.ListarClientes();
         }
         private void atualizaGrid()
         {
@@ -108,6 +108,36 @@ namespace Projeto_Controle_Vendas.Views
             ClienteDAO dao = new ClienteDAO();
             tabelaCliente.DataSource = dao.BuscarClientePorNome(nome);
 
+            if (string.IsNullOrEmpty(txtPesquisa.Text))
+            {
+                tabelaCliente.DataSource = dao.ListarClientes();
+            }
+        }
+        private void txtPesquisa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string nome = "%" + txtPesquisa.Text + "%";
+            ClienteDAO dao = new ClienteDAO();
+            tabelaCliente.DataSource = dao.ListarClientePorNome(nome);
+        }
+
+        private void btnBuscarCep_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string cep = txtCep.Text;
+                string xml = "https://viacep.com.br/ws/" + cep + "/xml/";
+                DataSet dados = new DataSet();
+                dados.ReadXml(xml);
+                txtEndereco.Text = dados.Tables[0].Rows[0]["logradouro"].ToString();
+                txtBairro.Text = dados.Tables[0].Rows[0]["bairro"].ToString();
+                txtCidade.Text = dados.Tables[0].Rows[0]["localidade"].ToString();
+                txtUf.Text = dados.Tables[0].Rows[0]["logradouro"].ToString();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Endereço não encontrado, por favor digite manualmente.");
+            }
         }
     }
 }

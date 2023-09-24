@@ -3,6 +3,7 @@ using Projeto_Controle_Vendas.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -163,5 +164,28 @@ namespace Projeto_Controle_Vendas.Dao
             }
         }
         #endregion
+        #region ListaClientesPorNome
+        public DataTable ListarClientePorNome(string nome)
+        {
+            try
+            {
+                string query = "SELECT * FROM tb_clientes WHERE nome Like @Nome";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, ConectaBanco.Conexao());
+                adapter.SelectCommand.Parameters.AddWithValue("@Nome", nome);
+                DataTable dados = new DataTable();
+                adapter.Fill(dados);
+                ConectaBanco.Conexao().Close();
+                return dados;
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show($"Aconteceu o erro {erro}");
+                return null;
+
+            }
+        }
+        #endregion
+
     }
 }
