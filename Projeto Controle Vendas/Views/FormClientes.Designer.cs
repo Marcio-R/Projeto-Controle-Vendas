@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabClientes = new System.Windows.Forms.TabControl();
             this.tabPageCadastro = new System.Windows.Forms.TabPage();
+            this.btnBuscarCep = new System.Windows.Forms.Button();
             this.txtUf = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
@@ -69,7 +70,6 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.btnBuscarCep = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabClientes.SuspendLayout();
             this.tabPageCadastro.SuspendLayout();
@@ -148,6 +148,19 @@
             this.tabPageCadastro.TabIndex = 0;
             this.tabPageCadastro.Text = "Dados Pessoais";
             this.tabPageCadastro.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscarCep
+            // 
+            this.btnBuscarCep.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnBuscarCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarCep.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBuscarCep.Location = new System.Drawing.Point(789, 92);
+            this.btnBuscarCep.Name = "btnBuscarCep";
+            this.btnBuscarCep.Size = new System.Drawing.Size(105, 40);
+            this.btnBuscarCep.TabIndex = 6;
+            this.btnBuscarCep.Text = "Pequisar";
+            this.btnBuscarCep.UseVisualStyleBackColor = false;
+            this.btnBuscarCep.Click += new System.EventHandler(this.btnBuscarCep_Click);
             // 
             // txtUf
             // 
@@ -501,6 +514,7 @@
             this.btnNovo.TabIndex = 2;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnSalvar
             // 
@@ -540,19 +554,6 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnBuscarCep
-            // 
-            this.btnBuscarCep.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnBuscarCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarCep.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscarCep.Location = new System.Drawing.Point(789, 92);
-            this.btnBuscarCep.Name = "btnBuscarCep";
-            this.btnBuscarCep.Size = new System.Drawing.Size(105, 40);
-            this.btnBuscarCep.TabIndex = 6;
-            this.btnBuscarCep.Text = "Pequisar";
-            this.btnBuscarCep.UseVisualStyleBackColor = false;
-            this.btnBuscarCep.Click += new System.EventHandler(this.btnBuscarCep_Click);
             // 
             // FormClientes
             // 
