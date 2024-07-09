@@ -16,6 +16,6 @@ namespace Projeto_Controle_Vendas.Conexao
             string conexao = ConfigurationManager.ConnectionStrings["BDVENDAS"].ConnectionString;
             return new SqlConnection(conexao);
         }
-
+        
     }
 }
