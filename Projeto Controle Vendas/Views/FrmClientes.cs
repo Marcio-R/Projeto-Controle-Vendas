@@ -39,7 +39,7 @@ namespace Projeto_Controle_Vendas.Views
             dao.CadastraCliente(cliente);
             TabelaClientes.DataSource = dao.listarCliente();
             LimparCamposTexto();
-            
+
         }
 
         private void FrmClientes_Load(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace Projeto_Controle_Vendas.Views
             //Recarrega o dataGridView
             TabelaClientes.DataSource = dao.listarCliente();
             LimparCamposTexto();
-            
+
         }
         private void LimparCamposTexto()
         {
@@ -119,6 +119,27 @@ namespace Projeto_Controle_Vendas.Views
             dao.AlterarCliente(cliente);
             TabelaClientes.DataSource = dao.listarCliente();
             LimparCamposTexto();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            string nome = txtPesquisa.Text;
+            ClienteDAO dao = new ClienteDAO();
+            TabelaClientes.DataSource = dao.BuscarClientePorNome(nome);
+
+            if (TabelaClientes.Rows.Count == 0)
+            {
+                TabelaClientes.DataSource = dao.listarCliente();
+            }
+        }
+
+        private void txtPesquisa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string nome = "%" + txtPesquisa.Text + "%";
+            ClienteDAO clienteDAO = new ClienteDAO();  
+            TabelaClientes.DataSource = clienteDAO.ListarPorNome(nome);
+
+       
         }
     }
 }

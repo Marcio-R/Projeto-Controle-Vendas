@@ -59,16 +59,28 @@ namespace Projeto_Controle_Vendas.Dao
         {
             try
             {
+                // Cria um adaptador de dados para executar a consulta SQL e preencher o DataTable com os resultados.
                 SqlDataAdapter tabelaCliente = new SqlDataAdapter("select * from tb_clientes", _connection);
+
+                // Cria um objeto DataTable para armazenar os dados recuperados.
                 DataTable dados = new DataTable();
+
+                // Abre a conexão com o banco de dados.
+                _connection.Open();
+
+                // Preenche o DataTable com os dados recuperados pela consulta SQL.
                 tabelaCliente.Fill(dados);
+
+                // Fecha a conexão com o banco de dados.
                 _connection.Close();
+
+                // Retorna o DataTable com os dados.
                 return dados;
             }
             catch (Exception erro)
             {
-
-                MessageBox.Show($"Erro ao exucutar o comando sql ,{erro}");
+                // Em caso de exceção, exibe uma mensagem de erro e retorna null.
+                MessageBox.Show($"Erro ao executar o comando SQL: {erro}");
                 return null;
             }
         }
@@ -141,6 +153,50 @@ namespace Projeto_Controle_Vendas.Dao
 
                 MessageBox.Show($"Erro ao excluir cliente!{erro}");
 
+            }
+        }
+        #endregion
+
+        #region BuscarClientePorNome
+
+        public DataTable BuscarClientePorNome(string nome)
+        {
+            try
+            {
+                SqlDataAdapter tabelaCliente = new SqlDataAdapter("select * from tb_clientes where nome = @nome", _connection);
+                tabelaCliente.SelectCommand.Parameters.AddWithValue("@nome", nome);
+                DataTable tabela = new DataTable();
+                _connection.Open();
+                tabelaCliente.Fill(tabela);
+                _connection.Close();
+                return tabela;
+            }
+            catch (Exception erro)
+            {
+                // Em caso de exceção, exibe uma mensagem de erro e retorna null.
+                MessageBox.Show($"Erro ao executar o comando SQL: {erro}");
+                return null;
+            }
+        }
+        #endregion
+        #region ListaClientePorNome
+        public DataTable ListarPorNome(string nome)
+        {
+            try
+            {
+                SqlDataAdapter tabelaCliente = new SqlDataAdapter("select * from tb_clientes where nome like @nome ", _connection);
+                tabelaCliente.SelectCommand.Parameters.AddWithValue("@nome", nome);
+                DataTable dataTable = new DataTable();
+                _connection.Open();
+                tabelaCliente.Fill(dataTable);
+                _connection.Close();
+                return dataTable;
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show($"Erro ao executar o comando SQL: {erro}");
+                return null;
             }
         }
         #endregion
