@@ -136,10 +136,29 @@ namespace Projeto_Controle_Vendas.Views
         private void txtPesquisa_KeyPress(object sender, KeyPressEventArgs e)
         {
             string nome = "%" + txtPesquisa.Text + "%";
-            ClienteDAO clienteDAO = new ClienteDAO();  
+            ClienteDAO clienteDAO = new ClienteDAO();
             TabelaClientes.DataSource = clienteDAO.ListarPorNome(nome);
+        }
 
-       
+        private void btnBuscarCep_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string cep = txtCep.Text;
+                string xml = $"https://viacep.com.br/ws/{cep}/xml/";
+                DataSet dados = new DataSet();
+
+                dados.ReadXml(xml);
+                txtEndereco.Text = dados.Tables[0].Rows[0]["logradouro"].ToString();
+                txtBairro.Text = dados.Tables[0].Rows[0]["bairro"].ToString();
+                txtCidade.Text = dados.Tables[0].Rows[0]["localidade"].ToString();
+                cbUf.Text = dados.Tables[0].Rows[0]["uf"].ToString();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

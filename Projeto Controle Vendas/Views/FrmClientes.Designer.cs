@@ -69,6 +69,7 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.btnBuscarCep = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabClientes.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -83,7 +84,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 69);
+            this.panel1.Size = new System.Drawing.Size(933, 69);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -107,11 +108,12 @@
             this.tabClientes.Location = new System.Drawing.Point(0, 75);
             this.tabClientes.Name = "tabClientes";
             this.tabClientes.SelectedIndex = 0;
-            this.tabClientes.Size = new System.Drawing.Size(800, 304);
+            this.tabClientes.Size = new System.Drawing.Size(933, 304);
             this.tabClientes.TabIndex = 1;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnBuscarCep);
             this.tabPage1.Controls.Add(this.cbUf);
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.txtCidade);
@@ -144,7 +146,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 278);
+            this.tabPage1.Size = new System.Drawing.Size(925, 278);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados Pessoais";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -282,8 +284,8 @@
             // 
             // txtCep
             // 
-            this.txtCep.Location = new System.Drawing.Point(624, 231);
-            this.txtCep.Mask = "000000-000-00";
+            this.txtCep.Location = new System.Drawing.Point(557, 146);
+            this.txtCep.Mask = "00000000";
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(132, 26);
             this.txtCep.TabIndex = 15;
@@ -292,7 +294,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label9.Location = new System.Drawing.Point(578, 234);
+            this.label9.Location = new System.Drawing.Point(506, 152);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 20);
             this.label9.TabIndex = 14;
@@ -489,7 +491,7 @@
             this.btnNovo.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnNovo.Location = new System.Drawing.Point(185, 389);
+            this.btnNovo.Location = new System.Drawing.Point(251, 389);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(106, 33);
             this.btnNovo.TabIndex = 2;
@@ -502,7 +504,7 @@
             this.btnSalvar.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalvar.Location = new System.Drawing.Point(302, 389);
+            this.btnSalvar.Location = new System.Drawing.Point(368, 389);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(106, 33);
             this.btnSalvar.TabIndex = 3;
@@ -516,7 +518,7 @@
             this.btnExcluir.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExcluir.Location = new System.Drawing.Point(419, 389);
+            this.btnExcluir.Location = new System.Drawing.Point(485, 389);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(106, 33);
             this.btnExcluir.TabIndex = 4;
@@ -530,7 +532,7 @@
             this.btnEditar.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEditar.Location = new System.Drawing.Point(536, 389);
+            this.btnEditar.Location = new System.Drawing.Point(602, 389);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(106, 33);
             this.btnEditar.TabIndex = 5;
@@ -538,11 +540,25 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // btnBuscarCep
+            // 
+            this.btnBuscarCep.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnBuscarCep.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnBuscarCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarCep.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBuscarCep.Location = new System.Drawing.Point(701, 146);
+            this.btnBuscarCep.Name = "btnBuscarCep";
+            this.btnBuscarCep.Size = new System.Drawing.Size(74, 27);
+            this.btnBuscarCep.TabIndex = 28;
+            this.btnBuscarCep.Text = "Buscar";
+            this.btnBuscarCep.UseVisualStyleBackColor = false;
+            this.btnBuscarCep.Click += new System.EventHandler(this.btnBuscarCep_Click);
+            // 
             // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 437);
+            this.ClientSize = new System.Drawing.Size(933, 437);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnSalvar);
@@ -607,5 +623,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridView TabelaClientes;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Button btnBuscarCep;
     }
 }
