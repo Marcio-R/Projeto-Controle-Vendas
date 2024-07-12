@@ -38,7 +38,7 @@ namespace Projeto_Controle_Vendas.Views
             ClienteDAO dao = new ClienteDAO();
             dao.CadastraCliente(cliente);
             TabelaClientes.DataSource = dao.listarCliente();
-            LimparCamposTexto();
+           // LimparCamposTexto();
 
         }
 
@@ -77,25 +77,25 @@ namespace Projeto_Controle_Vendas.Views
 
             //Recarrega o dataGridView
             TabelaClientes.DataSource = dao.listarCliente();
-            LimparCamposTexto();
+            //LimparCamposTexto();
 
         }
-        private void LimparCamposTexto()
+        private void LimparCamposTexto(Form tela)
         {
-            txtCodigo.Text = string.Empty;
-            txtNome.Text = string.Empty;
-            txtRg.Text = string.Empty;
-            txtCpf.Text = string.Empty;
-            txtEmail.Text = string.Empty;
-            txtTelefone.Text = string.Empty;
-            txtCelular.Text = string.Empty;
-            txtCep.Text = string.Empty;
-            txtEndereco.Text = string.Empty;
-            txtNumero.Text = string.Empty;
-            txtComplemento.Text = string.Empty;
-            txtBairro.Text = string.Empty;
-            txtCidade.Text = string.Empty;
-            cbUf.Text = string.Empty;
+            //txtCodigo.Text = string.Empty;
+            //txtNome.Text = string.Empty;
+            //txtRg.Text = string.Empty;
+            //txtCpf.Text = string.Empty;
+            //txtEmail.Text = string.Empty;
+            //txtTelefone.Text = string.Empty;
+            //txtCelular.Text = string.Empty;
+            //txtCep.Text = string.Empty;
+            //txtEndereco.Text = string.Empty;
+            //txtNumero.Text = string.Empty;
+            //txtComplemento.Text = string.Empty;
+            //txtBairro.Text = string.Empty;
+            //txtCidade.Text = string.Empty;
+            //cbUf.Text = string.Empty;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -118,7 +118,7 @@ namespace Projeto_Controle_Vendas.Views
             ClienteDAO dao = new ClienteDAO();
             dao.AlterarCliente(cliente);
             TabelaClientes.DataSource = dao.listarCliente();
-            LimparCamposTexto();
+            //LimparCamposTexto();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -154,11 +154,16 @@ namespace Projeto_Controle_Vendas.Views
                 txtCidade.Text = dados.Tables[0].Rows[0]["localidade"].ToString();
                 cbUf.Text = dados.Tables[0].Rows[0]["uf"].ToString();
             }
-            catch (Exception)
+            catch (Exception erro)
             {
 
-                throw;
+                throw new Exception(erro.Message);
             }
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            new Helpers().LimpaTela(this);
         }
     }
 }
